@@ -60,9 +60,9 @@ Ejecute las migraciones para crear las tablas necesarias:
 php artisan migrate
 ```
 
-### 7. Poblar la base de datos (opcional)
+### 7. Poblar la base de datos con usuario prueba()
 
-Si tiene un archivo de seed, puede poblar la base de datos con datos iniciales:
+Poblar la base de datos con datos iniciales:
 ```
 php artisan db:seed
 ```
