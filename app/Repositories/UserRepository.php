@@ -4,21 +4,15 @@ namespace App\Repositories;
 
 use App\Models\User;
 
-interface UserRepositoryInterface
+class UserRepository 
 {
-    public function all();
+    private $model;
 
-    public function find($id);
-
-    public function create(array $data);
-
-    public function update(User $user, array $data);
-
-    public function delete(User $user);
-}
-
-class UserRepository implements UserRepositoryInterface
-{
+    public function __construct()
+    {
+        $this->model = new User();
+    }
+    
     public function all()
     {
         return User::all();
