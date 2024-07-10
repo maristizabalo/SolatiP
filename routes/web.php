@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json(['Bienvenida' => 'En esta ruta no encontraras nada ya que es un API REST, debes acceder a la ruta de login o registrarse para acceder']);
 });

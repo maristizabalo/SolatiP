@@ -13,52 +13,59 @@ Este proyecto es una aplicación desarrollada en Laravel como prueba de desarrol
 
 Siga estos pasos para instalar y configurar el proyecto en su entorno local.
 
-### 1. Clonar el repositorio
+## 1. Clonar el repositorio
 
-```bash
+```
 git clone https://github.com/tu_usuario/solatiprueba.git
 cd solatiprueba
+```
 
-### 2. Instalar dependecnias PHP
+## 2. Instalar dependecnias PHP
 
+```
 composer install
+```
 
 ### 3. Crear y configurar el archivo .env
 
 Copie el archivo .env.example a .env y edite los valores según su configuración.
+```
 cp .env.example .env
+```
 
 ### 4. Generar claves
 
 Genere las claves necesarias para Laravel y JWT:
+```
 php artisan key:generate
 php artisan jwt:secret
+```
 
 ### 5. Configurar la base de datos
 
 Edite el archivo .env para configurar su conexión a PostgreSQL. Ejemplo:
+```
 DB_CONNECTION=pgsql
 DB_HOST=localhost
 DB_PORT=5432
 DB_DATABASE=bd_solati
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
 ### 6. Migrar la base de datos
 
 Ejecute las migraciones para crear las tablas necesarias:
+```
 php artisan migrate
+```
 
-### 7. Poblar la base de datos (opcional)
+### 7. Poblar la base de datos con usuario prueba()
 
-Si tiene un archivo de seed, puede poblar la base de datos con datos iniciales:
+Poblar la base de datos con datos iniciales:
+```
 php artisan db:seed
-
-### 8. Instalar dependencias de JavaScript (opcional)
-
-Si necesita compilar assets frontend, instale las dependencias de Node.js:
-npm install
-
+```
 
 
 
@@ -72,7 +79,7 @@ POST /api/login: Autenticar usuario y obtener token JWT.
 POST /api/logout: Cerrar sesión invalidando el token JWT.
 GET /api/user: Obtener información del usuario autenticado (requiere token JWT en el encabezado de autorización).
 
-#Estructura del Proyecto
+# Estructura del Proyecto
 
 app/Http/Controllers/: Controladores de la aplicación.
 app/Repositories/: Repositorios para desacoplar la lógica de negocio del acceso a los datos.
