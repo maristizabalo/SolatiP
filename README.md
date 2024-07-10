@@ -71,7 +71,7 @@ POST /api/login: Autenticar usuario y obtener token JWT.
 POST /api/logout: Cerrar sesión invalidando el token JWT.
 GET /api/user: Obtener información del usuario autenticado (requiere token JWT en el encabezado de autorización).
 
-#Estructura del Proyecto
+# Estructura del Proyecto
 
 app/Http/Controllers/: Controladores de la aplicación.
 app/Repositories/: Repositorios para desacoplar la lógica de negocio del acceso a los datos.
