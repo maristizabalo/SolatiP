@@ -13,13 +13,12 @@ Este proyecto es una aplicación desarrollada en Laravel como prueba de desarrol
 
 Siga estos pasos para instalar y configurar el proyecto en su entorno local.
 
-### 1. Clonar el repositorio
+## 1. Clonar el repositorio
 
-```bash
 git clone https://github.com/tu_usuario/solatiprueba.git
 cd solatiprueba
 
-### 2. Instalar dependecnias PHP
+## 2. Instalar dependecnias PHP
 
 composer install
 
