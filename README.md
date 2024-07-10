@@ -69,22 +69,45 @@ php artisan db:seed
 
 
 
-# Autenticación
+## Autenticación
 
 La autenticación en esta aplicación se maneja mediante jwt-auth. Para iniciar sesión, haga una solicitud POST a /api/login con el username y password. La respuesta incluirá un token JWT que debe usarse en las solicitudes subsecuentes.
 
-# Rutas de la API
+## Rutas de la API
 
-POST /api/login: Autenticar usuario y obtener token JWT.
-POST /api/logout: Cerrar sesión invalidando el token JWT.
-GET /api/user: Obtener información del usuario autenticado (requiere token JWT en el encabezado de autorización).
+### Rutas de autenticación
 
-# Estructura del Proyecto
+- POST /api/auth/register: Registrar un nuevo usuario.
+- POST /api/auth/login: Autenticar usuario y obtener token JWT.
+- GET /api/auth/logout: Cerrar sesión invalidando el token JWT.
+- GET /api/auth/refresh: Refrescar el token JWT.
+- GET /api/auth/me: Obtener información del usuario autenticado (requiere token JWT en el encabezado de autorización).
 
-app/Http/Controllers/: Controladores de la aplicación.
-app/Repositories/: Repositorios para desacoplar la lógica de negocio del acceso a los datos.
-database/migrations/: Archivos de migración de la base de datos.
-routes/api.php: Definición de rutas de la API.
+### Rutas protegidas de usuarios
+
+- GET /api/users: Obtener todos los usuarios (requiere token JWT en el encabezado de autorización).
+- GET /api/users/{id}: Obtener información de un usuario específico (requiere token JWT en el encabezado de autorización).
+- PUT /api/users/{id}: Actualizar información de un usuario específico (requiere token JWT en el encabezado de autorización).
+- DELETE /api/users/{id}: Eliminar un usuario específico (requiere token JWT en el encabezado de autorización).
+
+## Uso del Patrón Repository
+El proyecto utiliza el patrón Repository para desacoplar la lógica de negocio del acceso a los datos.
+
+### UserRepository
+El UserRepository maneja las operaciones de acceso a los datos del modelo User.
+
+### UserController
+El UserController utiliza el UserRepository para manejar las solicitudes HTTP relacionadas con los usuarios.
+
+### AuthController
+El AuthController maneja las operaciones de autenticación utilizando JWT.
+
+## Estructura del Proyecto
+
+- app/Http/Controllers/: Controladores de la aplicación.
+- app/Repositories/: Repositorios para desacoplar la lógica de negocio del acceso a los datos.
+- database/migrations/: Archivos de migración de la base de datos.
+- routes/api.php: Definición de rutas de la API.
 
 
 
