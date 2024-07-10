@@ -61,6 +61,6 @@ class UserController extends Controller
 
         $this->userRepository->delete($user);
 
-        return response()->json(['message' => 'User deleted successfully']);
+        return response()->json(['message' => 'Usuario borrado exitosamente']);
     }
 }
