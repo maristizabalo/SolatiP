@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $user = $this->userRepository->find($id);
         if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
+            return response()->json(['message' => 'Usuario no encontrado'], 404);
         }
         return response()->json($user);
     }
@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         $user = $this->userRepository->find($id);
         if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
+            return response()->json(['message' => 'Usuario no encontrado'], 404);
         }
 
         $data = $request->validate([
@@ -49,14 +49,14 @@ class UserController extends Controller
 
         $this->userRepository->update($user, $data);
 
-        return response()->json(['message' => 'User updated successfully', 'user' => $user]);
+        return response()->json(['message' => 'Usuario actualizado correctamene', 'user' => $user]);
     }
 
     public function destroy($id)
     {
         $user = $this->userRepository->find($id);
         if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
+            return response()->json(['message' => 'Usuario no encontrado'], 404);
         }
 
         $this->userRepository->delete($user);
